@@ -21,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
@@ -38,6 +39,10 @@ public class LoginController implements Initializable {
     private JFXPasswordField contrasena;
     @FXML
     private Button cerrar;
+    @FXML
+    private Circle logo;
+    @FXML
+    private Button login;
 
     /**
      * Initializes the controller class.
@@ -56,15 +61,20 @@ public class LoginController implements Initializable {
         contrasena.setOnKeyReleased(keyEventHandler);
         
         //Iconos
-        URL linkCerrar = getClass().getResource("/imagenes/cerrar.png");
+        URL linkCerrar = getClass().getResource("/imagenes/close.png");
         Image imgCerrar = new Image(linkCerrar.toString(),20,20,false,true);
         cerrar.setGraphic((new ImageView(imgCerrar)));
+        
+        
+        
     }    
 
     @FXML
     private void login(MouseEvent event) {
         login();
     }
+    
+    
     
     private void login() {
         try {

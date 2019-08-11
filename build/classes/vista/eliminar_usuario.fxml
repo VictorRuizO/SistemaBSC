@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="593.0" style="-fx-background-color: white; -fx-border-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.EliminarUsuarioController">
+    <children>
+      <Pane layoutX="1.0" layoutY="1.0" prefHeight="560.0" prefWidth="590.0">
+         <children>
+            <Button fx:id="cerrar" focusTraversable="false" graphicTextGap="0.0" layoutX="556.0" layoutY="7.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="340.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Eliminar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="447.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Cancelar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <JFXTextField editable="false" focusTraversable="false" layoutX="72.0" layoutY="365.0" prefHeight="32.0" prefWidth="186.0" promptText="Fecha de nacimiento" />
+            <JFXTextField editable="false" layoutX="72.0" layoutY="421.0" prefHeight="32.0" prefWidth="186.0" promptText="Contraseña" />
+            <JFXTextField editable="false" layoutX="72.0" layoutY="291.0" prefHeight="32.0" prefWidth="186.0" promptText="Apellidos" />
+            <JFXTextField editable="false" layoutX="72.0" layoutY="225.0" prefHeight="32.0" prefWidth="186.0" promptText="Nombres" />
+            <JFXTextField editable="false" focusTraversable="false" layoutX="72.0" layoutY="162.0" prefHeight="32.0" prefWidth="186.0" promptText="Documento de identidad" />
+            <JFXComboBox fx:id="usuarios" editable="true" layoutX="72.0" layoutY="77.0" prefHeight="32.0" prefWidth="451.0" promptText="Usuario" />
+            <JFXTextField editable="false" layoutX="72.0" layoutY="480.0" prefHeight="32.0" prefWidth="186.0" promptText="Área" />
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

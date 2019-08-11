@@ -5,9 +5,14 @@
         <group>
             <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/login.fxml</file>
             <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/LoginController.java</file>
+            <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/eliminar_usuario.fxml</file>
             <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/SistemaBSC.java</file>
+            <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/ModificarUsuarioController.java</file>
+            <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/AddUsuarioController.java</file>
+            <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/EliminarUsuarioController.java</file>
             <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/VentanaController.java</file>
             <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/ventana.fxml</file>
+            <file>file:/C:/Users/Victor/Documents/Uni/Desarrollo2/proyecto/SistemaBSC/src/vista/add_usuario.fxml</file>
         </group>
     </open-files>
 </project-private>
