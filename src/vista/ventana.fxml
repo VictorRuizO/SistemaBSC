@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="main_pane" prefHeight="890.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.VentanaController">
    <children>
-      <Button fx:id="cerrar" layoutX="1380.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#exit" style="-fx-background-color: white;" />
+      <Button fx:id="cerrar" accessibleRole="PARENT" layoutX="1380.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#exit" style="-fx-background-color: white;" text="" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
       <Pane layoutY="2.0" prefHeight="927.0" prefWidth="203.0">
          <children>
             <Button fx:id="add_usuario" layoutX="35.0" layoutY="637.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="54.0" prefWidth="134.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Agregar Usuario">
@@ -72,17 +72,17 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="add_obj_1" layoutX="37.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
+            <Button fx:id="add_obj_1" layoutX="37.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="rem_obj_1" layoutX="69.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
+            <Button fx:id="rem_obj_1" layoutX="69.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="upd_obj_1" layoutX="102.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
+            <Button fx:id="upd_obj_1" layoutX="102.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-padding: 0; -fx-background-color: #EEEEEE; -fx-border-color: grey;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXListView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -222,7 +221,7 @@ public class VentanaController implements Initializable {
     @FXML
     private void exit(MouseEvent event) {
         Window window = ((Node)(event.getSource())).getScene().getWindow();   
-
+        System.out.println("asdadsd");
         if (window instanceof Stage){
             ((Stage) window).close();
         }
@@ -311,6 +310,57 @@ public class VentanaController implements Initializable {
         Image imgLogo = new Image(linkLogo.toString(),100,100,false,true);
         //logo.setGraphic((new ImageView(imgLogo)));
         
+    }
+
+    @FXML
+    private void addObj(MouseEvent event) {
+        try {
+            FXMLLoader root = new FXMLLoader();
+            root.setLocation(getClass().getResource("add_objetivo.fxml"));
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root.load()));
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void elimObj(MouseEvent event) {
+         try {
+            FXMLLoader root = new FXMLLoader();
+            root.setLocation(getClass().getResource("elim_objetivo.fxml"));
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root.load()));
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void modObj(MouseEvent event) {
+        try {
+            FXMLLoader root = new FXMLLoader();
+            root.setLocation(getClass().getResource("mod_objetivo.fxml"));
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root.load()));
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

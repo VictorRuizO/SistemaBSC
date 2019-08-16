@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="377.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.AddObjetivoController">
+    <children>
+      <AnchorPane layoutX="1.0" prefHeight="537.0" prefWidth="354.0" style="-fx-background-color: white; -fx-border-color: grey;">
+         <children>
+            <Button fx:id="cerrar" accessibleRole="PARENT" focusTraversable="false" graphicTextGap="0.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <JFXTextField editable="false" layoutX="66.0" layoutY="32.0" prefHeight="46.0" prefWidth="247.0" promptText="Código Objetivo" />
+            <JFXTextArea layoutX="15.0" layoutY="111.0" prefHeight="340.0" prefWidth="325.0" promptText="Descripción" />
+            <Button layoutX="189.0" layoutY="473.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Cancelar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            
+                  <Button layoutX="86.0" layoutY="473.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Agregar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
