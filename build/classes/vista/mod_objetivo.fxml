@@ -31,7 +31,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <JFXTextField layoutX="42.0" layoutY="43.0" prefHeight="38.0" prefWidth="271.0" promptText="Código Objetivo" />
+            <JFXTextField editable="false" layoutX="42.0" layoutY="43.0" prefHeight="38.0" prefWidth="271.0" promptText="Código Objetivo" />
          </children>
       </AnchorPane>
     </children>

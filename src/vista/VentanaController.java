@@ -12,22 +12,14 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
-import javafx.scene.control.Separator;
-import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -54,34 +46,20 @@ public class VentanaController implements Initializable {
     private Button rem_obj_1;
     @FXML
     private Button upd_obj_1;
-    @FXML
-    private Button add_met_1;
-    @FXML
-    private Button rem_met_1;
-    @FXML
-    private Button upd_met_1;
+    
     @FXML
     private Button add_ind_1;
     @FXML
     private Button rem_ind_1;
     @FXML
     private Button upd_ind_1;
+    
     @FXML
-    private Button add_ini_1;
-    @FXML
-    private Button rem_ini_1;
-    @FXML
-    private Button upd_ini_1;
-    @FXML
-    private Circle logo;
+    private ImageView logo;
     @FXML
     private JFXListView<TextFlow> list_obj_1;
     @FXML
-    private JFXListView<TextFlow> list_met_1;
-    @FXML
     private JFXListView<TextFlow> list_ind_1;
-    @FXML
-    private JFXListView<TextFlow> list_ini_1;
     @FXML
     private Button add_usuario;
     @FXML
@@ -89,103 +67,77 @@ public class VentanaController implements Initializable {
     @FXML
     private Button elim_usuario;
     @FXML
-    private JFXListView<?> list_obj_11;
-    @FXML
-    private JFXListView<?> list_met_2;
-    @FXML
-    private JFXListView<?> list_ind_11;
-    @FXML
-    private JFXListView<?> list_ini_11;
-    @FXML
-    private Button add_obj_11;
-    @FXML
-    private Button rem_obj_11;
-    @FXML
-    private Button upd_obj_11;
-    @FXML
-    private Button add_met_11;
-    @FXML
-    private Button rem_met_11;
-    @FXML
-    private Button upd_met_11;
-    @FXML
-    private Button add_ind_11;
-    @FXML
-    private Button rem_ind_11;
-    @FXML
-    private Button upd_ind_11;
-    @FXML
-    private Button add_ini_11;
-    @FXML
-    private Button rem_ini_11;
-    @FXML
-    private Button upd_ini_11;
-    @FXML
-    private JFXListView<?> list_obj_12;
-    @FXML
-    private JFXListView<?> list_met_11;
-    @FXML
-    private JFXListView<?> list_ind_12;
-    @FXML
-    private JFXListView<?> list_ini_12;
-    @FXML
-    private Button add_obj_12;
-    @FXML
-    private Button rem_obj_12;
-    @FXML
-    private Button upd_obj_12;
-    @FXML
-    private Button add_met_12;
-    @FXML
-    private Button rem_met_12;
-    @FXML
-    private Button upd_met_12;
-    @FXML
-    private Button add_ind_12;
-    @FXML
-    private Button rem_ind_12;
-    @FXML
-    private Button upd_ind_12;
-    @FXML
-    private Button add_ini_12;
-    @FXML
-    private Button rem_ini_12;
-    @FXML
-    private Button upd_ini_12;
-    @FXML
-    private JFXListView<?> list_obj_13;
-    @FXML
-    private JFXListView<?> list_met_12;
-    @FXML
-    private JFXListView<?> list_ind_13;
-    @FXML
-    private JFXListView<?> list_ini_13;
-    @FXML
-    private Button add_obj_13;
-    @FXML
-    private Button rem_obj_13;
-    @FXML
-    private Button upd_obj_13;
-    @FXML
-    private Button add_met_13;
-    @FXML
-    private Button rem_met_13;
-    @FXML
-    private Button upd_met_13;
-    @FXML
-    private Button add_ind_13;
-    @FXML
-    private Button rem_ind_13;
-    @FXML
-    private Button upd_ind_13;
-    @FXML
-    private Button add_ini_13;
-    @FXML
-    private Button rem_ini_13;
-    @FXML
-    private Button upd_ini_13;
-    @FXML
     private AnchorPane main_pane;
+    @FXML
+    private Button min;
+    @FXML
+    private Label labelUsuario;
+    @FXML
+    private Label labelArea;
+    @FXML
+    private JFXListView<?> list_obj_2;
+    @FXML
+    private JFXListView<?> list_ind_2;
+    @FXML
+    private Button add_obj_2;
+    @FXML
+    private Button rem_obj_2;
+    @FXML
+    private Button upd_obj_2;
+    @FXML
+    private Button add_ind_2;
+    @FXML
+    private Button rem_ind_2;
+    @FXML
+    private Button upd_ind_2;
+    @FXML
+    private JFXListView<?> list_obj_3;
+    @FXML
+    private JFXListView<?> list_ind_3;
+    @FXML
+    private Button add_obj_3;
+    @FXML
+    private Button rem_obj_3;
+    @FXML
+    private Button upd_obj_3;
+    @FXML
+    private JFXListView<?> list_obj_4;
+    @FXML
+    private JFXListView<?> list_ind_4;
+    @FXML
+    private Button add_obj_4;
+    @FXML
+    private Button rem_obj_4;
+    @FXML
+    private Button upd_obj_4;
+    @FXML
+    private Button add_ind_4;
+    @FXML
+    private Button rem_ind_4;
+    @FXML
+    private Button upd_ind_4;
+    @FXML
+    private Button metas1;
+    @FXML
+    private Button inici1;
+    @FXML
+    private Button metas2;
+    @FXML
+    private Button inici2;
+    @FXML
+    private Button metas3;
+    @FXML
+    private Button inici3;
+    @FXML
+    private Button metas4;
+    @FXML
+    private Button inici4;
+    @FXML
+    private Button add_ind_3;
+    @FXML
+    private Button rem_ind_3;
+    @FXML
+    private Button upd_ind_3;
 
     
 
@@ -207,7 +159,7 @@ public class VentanaController implements Initializable {
             final Text leftText = TextBuilder.create()
                 .text("Left bdadg aigd sg asdgai dgsa dgasidyga disgadil gsail dgas dihgasidagsdia gsd agsd agds yagd ydgasdad ada sda dsad d sada sda ds ad d asd a dsa d   ")
                 .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 9))
+                .font(Font.font(null, FontWeight.NORMAL, 11))
                 .build();
             
             tf.getChildren().add(leftText);
@@ -285,30 +237,60 @@ public class VentanaController implements Initializable {
         Image imgCerrar = new Image(linkCerrar.toString(),20,20,false,true);
         cerrar.setGraphic((new ImageView(imgCerrar)));
         
+        URL linkmin = getClass().getResource("/imagenes/window-minimize.png");
+        Image imgmin = new Image(linkmin.toString(),18,18,false,true);
+        min.setGraphic((new ImageView(imgmin)));
+        
         URL linkAdd = getClass().getResource("/imagenes/plus.png");
         Image imgAdd = new Image(linkAdd.toString(),13,13,false,true);
         add_obj_1.setGraphic((new ImageView(imgAdd)));
-        add_met_1.setGraphic((new ImageView(imgAdd)));
         add_ind_1.setGraphic((new ImageView(imgAdd)));
-        add_ini_1.setGraphic((new ImageView(imgAdd)));
+        add_obj_2.setGraphic((new ImageView(imgAdd)));
+        add_ind_2.setGraphic((new ImageView(imgAdd)));
+        add_obj_3.setGraphic((new ImageView(imgAdd)));
+        add_ind_3.setGraphic((new ImageView(imgAdd)));
+        add_obj_4.setGraphic((new ImageView(imgAdd)));
+        add_ind_4.setGraphic((new ImageView(imgAdd)));
         
         URL linkRem = getClass().getResource("/imagenes/minus.png");
         Image imgRem = new Image(linkRem.toString(),13,13,false,true);
         rem_obj_1.setGraphic((new ImageView(imgRem)));
-        rem_met_1.setGraphic((new ImageView(imgRem)));
         rem_ind_1.setGraphic((new ImageView(imgRem)));
-        rem_ini_1.setGraphic((new ImageView(imgRem)));
+        rem_obj_2.setGraphic((new ImageView(imgRem)));
+        rem_ind_2.setGraphic((new ImageView(imgRem)));
+        rem_obj_3.setGraphic((new ImageView(imgRem)));
+        rem_ind_3.setGraphic((new ImageView(imgRem)));
+        rem_obj_4.setGraphic((new ImageView(imgRem)));
+        rem_ind_4.setGraphic((new ImageView(imgRem)));
         
         URL linkUpd = getClass().getResource("/imagenes/settings.png");
         Image imgUpd = new Image(linkUpd.toString(),13,13,false,true);
         upd_obj_1.setGraphic((new ImageView(imgUpd)));
-        upd_met_1.setGraphic((new ImageView(imgUpd)));
         upd_ind_1.setGraphic((new ImageView(imgUpd)));
-        upd_ini_1.setGraphic((new ImageView(imgUpd)));
+        upd_obj_2.setGraphic((new ImageView(imgUpd)));
+        upd_ind_2.setGraphic((new ImageView(imgUpd)));
+        upd_obj_3.setGraphic((new ImageView(imgUpd)));
+        upd_ind_3.setGraphic((new ImageView(imgUpd)));
+        upd_obj_4.setGraphic((new ImageView(imgUpd)));
+        upd_ind_4.setGraphic((new ImageView(imgUpd)));
         
-        URL linkLogo = getClass().getResource("/imagenes/settings.png");
-        Image imgLogo = new Image(linkLogo.toString(),100,100,false,true);
-        //logo.setGraphic((new ImageView(imgLogo)));
+        URL linkAddUser = getClass().getResource("/imagenes/account-plus.png");
+        Image imgAddUser = new Image(linkAddUser.toString(),20,20,false,true);
+        add_usuario.setGraphic((new ImageView(imgAddUser)));
+        
+        URL linkElimUser = getClass().getResource("/imagenes/account-minus.png");
+        Image imgElimUser = new Image(linkElimUser.toString(),20,20,false,true);
+        elim_usuario.setGraphic((new ImageView(imgElimUser)));
+        
+        URL linkModUser = getClass().getResource("/imagenes/account-edit.png");
+        Image imgModUser = new Image(linkModUser.toString(),20,20,false,true);
+        mod_usuario.setGraphic((new ImageView(imgModUser)));
+        
+        URL linkLog = getClass().getResource("/imagenes/logo.png");
+        Image imgLog = new Image(linkLog.toString(),200,200,false,true);
+        logo.setImage(imgLog);
+        
+        
         
     }
 
@@ -360,6 +342,14 @@ public class VentanaController implements Initializable {
         }
         catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void minimizar(MouseEvent event) {
+        Window window = ((Node)(event.getSource())).getScene().getWindow(); 
+        if (window instanceof Stage){
+            ((Stage) window).setIconified(true);
         }
     }
     
