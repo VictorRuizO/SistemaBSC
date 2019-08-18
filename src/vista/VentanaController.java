@@ -12,9 +12,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -290,7 +292,19 @@ public class VentanaController implements Initializable {
         Image imgLog = new Image(linkLog.toString(),200,200,false,true);
         logo.setImage(imgLog);
         
+        URL linkMeta = getClass().getResource("/imagenes/flag-goal.png");
+        Image imgMeta = new Image(linkMeta.toString(),20,20,false,true);
+        metas1.setGraphic((new ImageView(imgMeta)));
+        metas2.setGraphic((new ImageView(imgMeta)));
+        metas3.setGraphic((new ImageView(imgMeta)));
+        metas4.setGraphic((new ImageView(imgMeta)));
         
+        URL linkIni = getClass().getResource("/imagenes/light.png");
+        Image imgIni = new Image(linkIni.toString(),20,20,false,true);
+        inici1.setGraphic((new ImageView(imgIni)));
+        inici2.setGraphic((new ImageView(imgIni)));
+        inici3.setGraphic((new ImageView(imgIni)));
+        inici4.setGraphic((new ImageView(imgIni)));
         
     }
 

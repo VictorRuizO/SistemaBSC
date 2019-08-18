@@ -23,7 +23,7 @@
       </Button>
       <Pane layoutY="2.0" prefHeight="892.0" prefWidth="203.0">
          <children>
-            <Button fx:id="add_usuario" layoutX="17.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Agregar Usuario">
+            <Button fx:id="add_usuario" layoutX="17.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Agregar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
@@ -31,7 +31,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <tooltip>
-                  <Tooltip text="Add usu ;)">
+                  <Tooltip text="Esta opción permite agregar nuevos usuarios al sistema" textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -58,21 +58,35 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="mod_usuario" layoutX="17.0" layoutY="681.0" mnemonicParsing="false" onMouseClicked="#mod" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="  Modificar Usuario">
+            <Button fx:id="mod_usuario" layoutX="17.0" layoutY="681.0" mnemonicParsing="false" onMouseClicked="#mod" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="  Modificar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción permite modificar los datos de los usuarios del sistema" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
-            <Button fx:id="elim_usuario" layoutX="17.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#elim" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Eliminar Usuario">
+            <Button fx:id="elim_usuario" layoutX="17.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#elim" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Eliminar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción permite eliminar usuarios registrados en el sistema" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <ImageView fx:id="logo" fitHeight="203.0" fitWidth="203.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="31.0" layoutY="267.0" text="ASISEVALORA S.A">
@@ -100,16 +114,37 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción agregar nuevos objetivos del area financiera" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button fx:id="rem_obj_1" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción eliminar objetivos del area financiera" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button fx:id="upd_obj_1" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción modificar objetivos del area financiera" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Label focusTraversable="false" layoutX="328.0" layoutY="16.0" text="INDICADORES">
                <font>
@@ -120,18 +155,39 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción agregar nuevos indicadores de un objetivo en el area financiara" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button fx:id="rem_ind_1" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción eliminar indicadores de un objetivo en el area financiara" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
             <Button fx:id="upd_ind_1" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Esta opción modificar indicadores de un objetivo en el area financiara" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
             </Button>
-            <Button fx:id="metas1" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <Button fx:id="metas1" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -139,7 +195,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <tooltip>
-                  <Tooltip text="Add usu ;)">
+                  <Tooltip text="Visualizar las metas del objetivo seleccionado" textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -151,7 +207,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="inici1" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <Button fx:id="inici1" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -159,7 +215,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <tooltip>
-                  <Tooltip text="Add usu ;)">
+                  <Tooltip text="Visualizar las iniciativas del objetivo seleccionado" textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -211,7 +267,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="metas2" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <Button fx:id="metas2" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -231,7 +287,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="inici2" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <Button fx:id="inici2" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -292,7 +348,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="metas3" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <Button fx:id="metas3" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -312,7 +368,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="inici3" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <Button fx:id="inici3" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -373,7 +429,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="metas4" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <Button fx:id="metas4" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -393,7 +449,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="inici4" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <Button fx:id="inici4" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
