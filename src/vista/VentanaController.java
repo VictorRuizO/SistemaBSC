@@ -164,7 +164,7 @@ public class VentanaController implements Initializable {
                 .font(Font.font(null, FontWeight.NORMAL, 11))
                 .build();
             
-            tf.getChildren().add(leftText);
+            tf.getChildren().add(leftText);           
             list_obj_1.getItems().add(tf);
             //list_ini_1.getItems().add(tf);
          }

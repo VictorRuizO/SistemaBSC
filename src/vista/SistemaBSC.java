@@ -5,13 +5,16 @@
  */
 package vista;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelo.Area;
+import pesistencia.AreaJpaController;
 
 /**
  *
@@ -35,6 +38,15 @@ public class SistemaBSC extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        Area a = new Area("001");
+        a.setDescripcion("desc");
+        a.setNombre("nomarea");
+        AreaJpaController c = new AreaJpaController();
+        try {
+            c.create(a);
+        } catch (Exception ex) {
+            Logger.getLogger(SistemaBSC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
