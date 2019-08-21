@@ -6,11 +6,13 @@
 package pesistencia;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.Indicador;
@@ -23,8 +25,8 @@ import pesistencia.exceptions.NonexistentEntityException;
  */
 public class IndicadorJpaController implements Serializable {
 
-    public IndicadorJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public IndicadorJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("SistemaBSCPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -163,6 +165,15 @@ public class IndicadorJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public List<Indicador> findIndicadorByObjetivo(String obj){
+        List<Indicador> salida = new ArrayList<>();
+        for(Indicador in:findIndicadorEntities()){
+            if(obj.equals(in.getCodObjetivo().getCodigo()+""))
+                salida.add(in);
+        }
+        return salida;
     }
     
 }

@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="420.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.LoginController">
     <children>
-      <Pane prefHeight="513.0" prefWidth="420.0">
+      <Pane prefHeight="513.0" prefWidth="420.0" style="-fx-background-color: white;">
          <children>
-            <JFXTextField fx:id="usuario" layoutX="98.0" layoutY="304.0" prefHeight="42.0" prefWidth="229.0" promptText="Usuario" />
-            <JFXPasswordField fx:id="contrasena" layoutX="96.0" layoutY="362.0" prefHeight="42.0" prefWidth="229.0" promptText="Contraseña" />
-            <Button fx:id="login" graphicTextGap="0.0" layoutX="165.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#login" opacity="0.91" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 );" text="Login">
+            <JFXTextField fx:id="usuario" layoutX="77.0" layoutY="305.0" onMouseClicked="#setLabel" prefHeight="42.0" prefWidth="267.0" promptText="Usuario" />
+            <JFXPasswordField fx:id="contrasena" layoutX="77.0" layoutY="364.0" onMouseClicked="#setLabel" prefHeight="42.0" prefWidth="267.0" promptText="Contraseña" />
+            <JFXButton fx:id="login" graphicTextGap="0.0" layoutX="165.0" layoutY="456.0" mnemonicParsing="false" onMouseClicked="#login" opacity="0.91" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 );" text="Login">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <Circle fx:id="logo" fill="#8d8d8d00" layoutX="210.0" layoutY="139.0" radius="111.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 );" />
+            </JFXButton>
+            <Label layoutX="139.0" layoutY="252.0" text="ASISEVALORA S.A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="logo" fitHeight="225.0" fitWidth="225.0" layoutX="98.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="label_info" layoutX="77.0" layoutY="427.0" prefHeight="17.0" prefWidth="267.0" text="Label" textFill="RED" visible="false" />
          </children>
       </Pane>
-      <Button fx:id="cerrar" focusTraversable="false" graphicTextGap="0.0" layoutX="364.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER">
+      <Button fx:id="cerrar" focusTraversable="false" graphicTextGap="0.0" layoutX="392.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

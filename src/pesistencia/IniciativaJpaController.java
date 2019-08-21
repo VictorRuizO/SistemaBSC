@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.Iniciativa;
@@ -23,8 +24,8 @@ import pesistencia.exceptions.NonexistentEntityException;
  */
 public class IniciativaJpaController implements Serializable {
 
-    public IniciativaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public IniciativaJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("SistemaBSCPU");
     }
     private EntityManagerFactory emf = null;
 

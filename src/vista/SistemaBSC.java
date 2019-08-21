@@ -24,10 +24,10 @@ public class SistemaBSC extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ventana.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         
         Scene scene = new Scene(root);
-        
+        stage.setTitle("Login");
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
@@ -38,15 +38,7 @@ public class SistemaBSC extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        Area a = new Area("001");
-        a.setDescripcion("desc");
-        a.setNombre("nomarea");
-        AreaJpaController c = new AreaJpaController();
-        try {
-            c.create(a);
-        } catch (Exception ex) {
-            Logger.getLogger(SistemaBSC.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
     
 }

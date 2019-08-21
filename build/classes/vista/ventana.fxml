@@ -23,7 +23,7 @@
       </JFXButton>
       <Pane layoutY="2.0" prefHeight="892.0" prefWidth="203.0">
          <children>
-            <JFXButton fx:id="add_usuario" layoutX="17.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Agregar Usuario">
+            <JFXButton fx:id="add_usuario" layoutX="17.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Agregar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
@@ -58,7 +58,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <JFXButton fx:id="mod_usuario" layoutX="17.0" layoutY="681.0" mnemonicParsing="false" onMouseClicked="#mod" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="  Modificar Usuario">
+            <JFXButton fx:id="mod_usuario" layoutX="17.0" layoutY="681.0" mnemonicParsing="false" onMouseClicked="#mod" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="  Modificar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
@@ -73,7 +73,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="elim_usuario" layoutX="17.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#elim" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Eliminar Usuario">
+            <JFXButton fx:id="elim_usuario" layoutX="17.0" layoutY="761.0" mnemonicParsing="false" onMouseClicked="#elim" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="   Eliminar Usuario" visible="false">
                <font>
                   <Font size="14.0" />
                </font>
@@ -99,18 +99,19 @@
                   <Font size="10.0" />
                </font>
             </Label>
+            <JFXButton fx:id="upd_boton" focusTraversable="false" layoutX="12.0" layoutY="829.0" onMouseClicked="#update" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: white;" />
          </children>
       </Pane>
       <Pane layoutX="214.0" layoutY="18.0" prefHeight="428.0" prefWidth="569.0" style="-fx-background-color: white;">
          <children>
-            <JFXListView fx:id="list_obj_1" layoutX="9.0" layoutY="68.0" prefHeight="352.0" prefWidth="236.0" style="-fx-effect: dropshadow( gaussian, red, 5, 0.5, 0.0, 0.0 );" />
+            <JFXListView fx:id="list_obj_1" layoutX="9.0" layoutY="68.0" onMouseClicked="#accionObj1" prefHeight="352.0" prefWidth="236.0" style="-fx-effect: dropshadow( gaussian, red, 5, 0.5, 0.0, 0.0 );" />
             <JFXListView fx:id="list_ind_1" layoutX="251.0" layoutY="68.0" prefHeight="352.0" prefWidth="236.0" style="-fx-effect: dropshadow( gaussian, red, 5, 0.5, 0.0, 0.0 );" />
             <Label focusTraversable="false" layoutX="93.0" layoutY="16.0" text="OBJETIVOS">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_obj_1" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="add_obj_1" disable="true" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -122,7 +123,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="rem_obj_1" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="rem_obj_1" disable="true" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -134,7 +135,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="upd_obj_1" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="upd_obj_1" disable="true" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -151,7 +152,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_ind_1" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="add_ind_1" disable="true" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -163,7 +164,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="rem_ind_1" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="rem_ind_1" disable="true" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -175,7 +176,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="upd_ind_1" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
+            <JFXButton fx:id="upd_ind_1" disable="true" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 ); -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -187,7 +188,7 @@
                   </Tooltip>
                </tooltip>
             </JFXButton>
-            <JFXButton fx:id="metas1" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <JFXButton fx:id="metas1" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -207,7 +208,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici1" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici1" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -232,17 +233,17 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_obj_2" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="add_obj_2" disable="true" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_obj_2" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="rem_obj_2" disable="true" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_obj_2" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="upd_obj_2" disable="true" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -252,22 +253,22 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_ind_2" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="add_ind_2" disable="true" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_ind_2" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="rem_ind_2" disable="true" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_ind_2" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
+            <JFXButton fx:id="upd_ind_2" disable="true" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, blue, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="metas2" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <JFXButton fx:id="metas2" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -287,7 +288,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici2" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici2" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -313,17 +314,17 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_obj_3" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="add_obj_3" disable="true" layoutX="82.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_obj_3" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="rem_obj_3" disable="true" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_obj_3" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="upd_obj_3" disable="true" layoutX="147.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -333,22 +334,22 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_ind_3" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="add_ind_3" disable="true" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_ind_3" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="rem_ind_3" disable="true" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_ind_3" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
+            <JFXButton fx:id="upd_ind_3" disable="true" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, green, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: green; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="metas3" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <JFXButton fx:id="metas3" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -368,7 +369,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici3" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici3" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -394,17 +395,17 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_obj_4" layoutX="82.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="add_obj_4" disable="true" layoutX="82.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#addObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_obj_4" layoutX="114.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="rem_obj_4" disable="true" layoutX="114.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#elimObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_obj_4" layoutX="147.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="upd_obj_4" disable="true" layoutX="147.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#modObj" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -414,22 +415,22 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <JFXButton fx:id="add_ind_4" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="add_ind_4" disable="true" layoutX="329.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="rem_ind_4" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="rem_ind_4" disable="true" layoutX="361.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="upd_ind_4" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
+            <JFXButton fx:id="upd_ind_4" disable="true" layoutX="394.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="23.0" style="-fx-effect: dropshadow( gaussian, yellow, 5, 0.5, 0.0, 0.0 ); -fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-padding: 0;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="metas4" contentDisplay="TOP" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Metas">
+            <JFXButton fx:id="metas4" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="173.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Metas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -449,7 +450,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici4" contentDisplay="TOP" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici4" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>

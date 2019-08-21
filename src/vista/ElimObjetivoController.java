@@ -5,6 +5,8 @@
  */
 package vista;
 
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,6 +17,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import logica.ElimObjetivoLogica;
+import modelo.Objetivo;
 
 /**
  * FXML Controller class
@@ -25,6 +29,15 @@ public class ElimObjetivoController implements Initializable {
 
     @FXML
     private Button cerrar;
+    @FXML
+    private JFXTextArea descripcion;
+    @FXML
+    private JFXTextField codigo;
+    
+    
+    private Objetivo obj;
+    private ElimObjetivoLogica logic;
+    private VentanaController ventP;
 
     /**
      * Initializes the controller class.
@@ -32,6 +45,7 @@ public class ElimObjetivoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        logic=new ElimObjetivoLogica();
         setIcons();
     }    
 
@@ -49,6 +63,20 @@ public class ElimObjetivoController implements Initializable {
         Image imgCerrar = new Image(linkCerrar.toString(),20,20,false,true);
         cerrar.setGraphic((new ImageView(imgCerrar)));
         
+        
+    }
+    public void recibeParametros(Objetivo o,VentanaController v){
+        obj=o;
+        ventP=v;
+        codigo.setText(String.format("%4d", obj.getCodigo()).replace(' ','0'));
+        descripcion.setText(obj.getDescripcion());
+    }
+
+    @FXML
+    private void eliminar(MouseEvent event) {
+        logic.eliminar(obj);
+        ventP.update();
+        exit(null);
         
     }
     

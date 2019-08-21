@@ -5,6 +5,7 @@
  */ 
 package vista;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +33,11 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import logica.VentanaLogica;
+import modelo.Administrador;
+import modelo.Indicador;
+import modelo.Objetivo;
+import modelo.Usuario;
 
 /**
  * FXML Controller class
@@ -141,7 +147,12 @@ public class VentanaController implements Initializable {
     @FXML
     private Button upd_ind_3;
 
-    
+    private Usuario usuarioLog;
+    private Boolean esUsuario;
+    private Administrador adminLog;
+    private VentanaLogica logicaVent;
+    @FXML
+    private JFXButton upd_boton;
 
     /**
      * Initializes the controller class.
@@ -150,24 +161,12 @@ public class VentanaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         setIcons();
+        logicaVent=new VentanaLogica();
         
          for (int i=0;i<30;i++){
-            TextFlow tf = new TextFlow();
-            tf.setTextAlignment(TextAlignment.JUSTIFY); 
-            tf.setLineSpacing(1.0); 
-            tf.setPrefWidth(5);
             
-            
-            final Text leftText = TextBuilder.create()
-                .text("Left bdadg aigd sg asdgai dgsa dgasidyga disgadil gsail dgas dihgasidagsdia gsd agsd agds yagd ydgasdad ada sda dsad d sada sda ds ad d asd a dsa d   ")
-                .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 11))
-                .build();
-            
-            tf.getChildren().add(leftText);           
-            list_obj_1.getItems().add(tf);
-            //list_ini_1.getItems().add(tf);
          }
+         
          
     }    
     
@@ -306,6 +305,10 @@ public class VentanaController implements Initializable {
         inici3.setGraphic((new ImageView(imgIni)));
         inici4.setGraphic((new ImageView(imgIni)));
         
+        URL linkUpdb = getClass().getResource("/imagenes/update.png");
+        Image imgUpdb = new Image(linkUpdb.toString(),20,20,false,true);
+        upd_boton.setGraphic((new ImageView(imgUpdb)));
+        
     }
 
     @FXML
@@ -313,10 +316,13 @@ public class VentanaController implements Initializable {
         try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("add_objetivo.fxml"));
+            Scene sce = new Scene(root.load());
+            AddObjetivoController a = (AddObjetivoController)root.getController();
+            a.recibirParametros(usuarioLog.getCodArea(),this);
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("My New Stage Title");
-            stage.setScene(new Scene(root.load()));
+            stage.setTitle("Agregar Objetivo");
+            stage.setScene(sce);
             stage.show();
             
         }
@@ -327,13 +333,18 @@ public class VentanaController implements Initializable {
 
     @FXML
     private void elimObj(MouseEvent event) {
+        String cod = list_obj_1.getSelectionModel().getSelectedItem().getId();
+        Objetivo obj = logicaVent.getObjetivo(cod);
          try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("elim_objetivo.fxml"));
+            Scene sce = new Scene(root.load());
+            ElimObjetivoController ec= (ElimObjetivoController)root.getController();
+            ec.recibeParametros(obj,this);
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("My New Stage Title");
-            stage.setScene(new Scene(root.load()));
+            stage.setTitle("Eliminar Objetivo");
+            stage.setScene(sce);
             stage.show();
             
         }
@@ -365,6 +376,115 @@ public class VentanaController implements Initializable {
         if (window instanceof Stage){
             ((Stage) window).setIconified(true);
         }
+    }
+    
+    @FXML
+    private void accionObj1(MouseEvent event){
+        list_ind_1.getItems().clear();
+        for(Indicador ind:logicaVent.getIndicadores(list_obj_1.getSelectionModel().getSelectedItem().getId())){
+            TextFlow tf = new TextFlow();
+            tf.setTextAlignment(TextAlignment.JUSTIFY); 
+            tf.setLineSpacing(1.0); 
+            tf.setPrefWidth(5);
+            
+            
+            final Text leftText = TextBuilder.create()
+                .text(ind.getDescripcion())
+                .translateX(0)
+                .font(Font.font(null, FontWeight.NORMAL, 11))
+                .build();
+            tf.setId(ind.getCodigo()+"");
+            tf.getChildren().add(leftText);           
+            list_ind_1.getItems().add(tf);
+        }
+    }
+    @FXML
+    private void update(MouseEvent event){
+        list_obj_1.getItems().clear();
+        for(Objetivo obj:logicaVent.getObjetivos("0001")){
+            TextFlow tf = new TextFlow();
+            tf.setTextAlignment(TextAlignment.JUSTIFY); 
+            tf.setLineSpacing(1.0); 
+            tf.setPrefWidth(5);
+            
+            
+            final Text leftText = TextBuilder.create()
+                .text(obj.getDescripcion())
+                .translateX(0)
+                .font(Font.font(null, FontWeight.NORMAL, 11))
+                .build();
+            tf.setId(obj.getCodigo()+"");
+            tf.getChildren().add(leftText);           
+            list_obj_1.getItems().add(tf);
+        }
+    }
+    
+    public void update(){
+        update(null);
+    }
+    public void recibeParametrosUsuario(Usuario usuario){
+        esUsuario=true;
+        usuarioLog=usuario;
+        labelUsuario.setText(usuarioLog.getNombres()+"\n"+usuarioLog.getApellidos());
+        labelArea.setText(usuarioLog.getCodArea().getNombre());
+        add_usuario.setVisible(false);
+        elim_usuario.setVisible(false);
+        mod_usuario.setVisible(false);
+        
+        confBotones(usuarioLog.getCodArea().getCodigo());
+        update(null);
+    }
+    
+    public void recibeParametrosUsuario(Administrador admin){
+        esUsuario=false;
+        adminLog=admin;
+        labelUsuario.setText(adminLog.getNombres()+"\n"+adminLog.getApellidos());
+        labelArea.setText("Administrador");
+    }
+
+    private void confBotones(String codigo) {
+        
+        if(codigo.equals("0001")){
+            add_obj_1.setDisable(false);
+            rem_obj_1.setDisable(false);
+            upd_obj_1.setDisable(false);
+            add_ind_1.setDisable(false);
+            rem_ind_1.setDisable(false);
+            upd_ind_1.setDisable(false);
+            metas1.setDisable(false);
+            inici1.setDisable(false);
+        }
+        else if(codigo.equals("0002")){
+            add_obj_2.setDisable(false);
+            rem_obj_2.setDisable(false);
+            upd_obj_2.setDisable(false);
+            add_ind_2.setDisable(false);
+            rem_ind_2.setDisable(false);
+            upd_ind_2.setDisable(false);
+            metas2.setDisable(false);
+            inici2.setDisable(false);
+        }
+        else if(codigo.equals("0003")){
+            add_obj_3.setDisable(false);
+            rem_obj_3.setDisable(false);
+            upd_obj_3.setDisable(false);
+            add_ind_3.setDisable(false);
+            rem_ind_3.setDisable(false);
+            upd_ind_3.setDisable(false);
+            metas3.setDisable(false);
+            inici3.setDisable(false);
+        }
+        else if(codigo.equals("0004")){
+            add_obj_4.setDisable(false);
+            rem_obj_4.setDisable(false);
+            upd_obj_4.setDisable(false);
+            add_ind_4.setDisable(false);
+            rem_ind_4.setDisable(false);
+            upd_ind_4.setDisable(false);
+            metas4.setDisable(false);
+            inici4.setDisable(false);
+        }
+        
     }
     
 }

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
 import modelo.Iniciativa;
 import modelo.Meta;
 import modelo.Objetivo;
@@ -28,8 +30,8 @@ import pesistencia.exceptions.NonexistentEntityException;
  */
 public class ObjetivoJpaController implements Serializable {
 
-    public ObjetivoJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public ObjetivoJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("SistemaBSCPU");
     }
     private EntityManagerFactory emf = null;
 
@@ -335,6 +337,15 @@ public class ObjetivoJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public List<Objetivo> findObjetivoByArea(String area){
+        List<Objetivo> salida = new ArrayList<>();
+        for(Objetivo o:findObjetivoEntities()){
+            if(o.getCodArea().getCodigo().equals(area))
+                salida.add(o);
+        }
+        return salida;
     }
     
 }

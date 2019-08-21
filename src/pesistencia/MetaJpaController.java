@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.Meta;
@@ -23,8 +24,8 @@ import pesistencia.exceptions.NonexistentEntityException;
  */
 public class MetaJpaController implements Serializable {
 
-    public MetaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public MetaJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("SistemaBSCPU");
     }
     private EntityManagerFactory emf = null;
 
