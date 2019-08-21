@@ -5,16 +5,21 @@
  */
 package vista;
 
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import logica.ModObjetivoLogica;
+import modelo.Objetivo;
 
 /**
  * FXML Controller class
@@ -25,6 +30,19 @@ public class ModObjetivoController implements Initializable {
 
     @FXML
     private Button cerrar;
+    
+    private Objetivo obj;
+    @FXML
+    private JFXTextArea descripcion;
+    @FXML
+    private JFXTextField codigo;
+    
+    @FXML
+    private Label label_info;
+    
+    private VentanaController ventP;
+    private String descAnt;
+    private ModObjetivoLogica logicaMod;
 
     /**
      * Initializes the controller class.
@@ -33,6 +51,7 @@ public class ModObjetivoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         setIcons();
+        logicaMod=new ModObjetivoLogica();
     }    
 
     @FXML
@@ -44,12 +63,40 @@ public class ModObjetivoController implements Initializable {
         }
     }
     
+    @FXML
+    private void setLabel(MouseEvent event) {
+        label_info.setVisible(false);
+    }
+    
     private void setIcons(){
         URL linkCerrar = getClass().getResource("/imagenes/close.png");
         Image imgCerrar = new Image(linkCerrar.toString(),20,20,false,true);
         cerrar.setGraphic((new ImageView(imgCerrar)));
         
-        
+        URL linkLabel = getClass().getResource("/imagenes/error.png");
+        Image imgLabel = new Image(linkLabel.toString(),20,20,false,true);
+        label_info.setGraphic((new ImageView(imgLabel)));
+    }
+    
+    public void recibeParametros(Objetivo o,VentanaController v){
+        obj=o;
+        ventP=v;
+        codigo.setText(String.format("%4d", obj.getCodigo()).replace(' ','0'));
+        descripcion.setText(obj.getDescripcion());
+        descAnt=obj.getDescripcion();
+    }
+
+    @FXML
+    private void modificar(MouseEvent event) {
+        if(descripcion.getText().equals(descAnt)){
+            label_info.setText("No se ha modificado el objetivo.");
+            label_info.setVisible(true);
+            return;
+        }
+        obj.setDescripcion(descripcion.getText());
+        logicaMod.modificarObjetivo(obj);
+        ventP.update();
+        exit(null);
     }
     
 }
