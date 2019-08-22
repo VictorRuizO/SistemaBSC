@@ -602,6 +602,50 @@ public class VentanaController implements Initializable {
             label_info.setVisible(true);           
          }
     }
+    
+    @FXML
+    private void iniciativas(MouseEvent event) {
+        setLabel();
+       try {
+             Objetivo obj=null;
+             if(event.getSource()==inici1){
+                 String cod = list_obj_1.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==inici2){
+                 String cod = list_obj_2.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==inici3){
+                 String cod = list_obj_3.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==inici4){
+                 String cod = list_obj_4.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+            
+             
+            FXMLLoader root = new FXMLLoader();
+            root.setLocation(getClass().getResource("iniciativas.fxml"));
+            Scene sce = new Scene(root.load());
+            IniciativasController ec= (IniciativasController)root.getController();
+            ec.recibeParametros(obj,this);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Iniciativas");
+            stage.setScene(sce);
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+         catch(RuntimeException e){
+            label_info.setText("Objetivo no seleccionado.");    
+            label_info.setVisible(true);           
+         }
+    }
     @FXML
     private void minimizar(MouseEvent event) {
         Window window = ((Node)(event.getSource())).getScene().getWindow(); 
@@ -875,6 +919,8 @@ public class VentanaController implements Initializable {
     private void BBDD(MouseEvent event) {
         System.out.println("BBDD");
     }
+
+    
 
     
 }

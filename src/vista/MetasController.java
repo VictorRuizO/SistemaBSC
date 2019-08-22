@@ -27,7 +27,6 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import logica.MetaLogica;
-import modelo.Indicador;
 import modelo.Meta;
 import modelo.Objetivo;
 

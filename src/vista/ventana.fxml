@@ -213,7 +213,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici1" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici1" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#iniciativas" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: red; -fx-effect: dropshadow( gaussian,red, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -335,7 +335,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici2" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici2" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#iniciativas" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: blue; -fx-effect: dropshadow( gaussian,blue, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -458,7 +458,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici3" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici3" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#iniciativas" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: green; -fx-effect: dropshadow( gaussian,green, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
@@ -581,7 +581,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inici4" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
+            <JFXButton fx:id="inici4" contentDisplay="TOP" disable="true" layoutX="501.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#iniciativas" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian,yellow, 5, 0.5, 0.0, 0.0 );" text="Iniciativas">
                <font>
                   <Font size="9.0" />
                </font>
