@@ -155,6 +155,8 @@ public class VentanaController implements Initializable {
     private JFXButton upd_boton;
     @FXML
     private JFXButton bbdd_settings;
+    @FXML
+    private Label label_info;
 
     /**
      * Initializes the controller class.
@@ -163,13 +165,7 @@ public class VentanaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         setIcons();
-        logicaVent=new VentanaLogica();
-        
-         for (int i=0;i<30;i++){
-            
-         }
-         
-         
+        logicaVent=new VentanaLogica(); 
     }    
     
 
@@ -183,6 +179,7 @@ public class VentanaController implements Initializable {
     
     @FXML
     private void add(MouseEvent event) {
+        setLabel();
         try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("add_usuario.fxml"));
@@ -200,6 +197,7 @@ public class VentanaController implements Initializable {
     
     @FXML
     private void mod(MouseEvent event) {
+        setLabel();
         try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("modificar_usuario.fxml"));
@@ -217,6 +215,7 @@ public class VentanaController implements Initializable {
     
     @FXML
     private void elim(MouseEvent event) {
+        setLabel();
         try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("eliminar_usuario.fxml"));
@@ -313,10 +312,14 @@ public class VentanaController implements Initializable {
         Image imgBD = new Image(linkBD.toString(),20,20,false,true);
         bbdd_settings.setGraphic((new ImageView(imgBD)));
         
+        URL linkError = getClass().getResource("/imagenes/error.png");
+        Image imgError = new Image(linkError.toString(),20,20,false,true);
+        label_info.setGraphic((new ImageView(imgError)));
     }
 
     @FXML
     private void addObj(MouseEvent event) {
+        setLabel();
         try {
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("add_objetivo.fxml"));
@@ -337,6 +340,7 @@ public class VentanaController implements Initializable {
 
     @FXML
     private void elimObj(MouseEvent event) {
+        setLabel();
          try {
              Objetivo obj=null;
              if(event.getSource()==rem_obj_1){
@@ -373,12 +377,14 @@ public class VentanaController implements Initializable {
             e.printStackTrace();
         }
          catch(RuntimeException e){
-            System.out.println("No se ha seleccionado ningún objetivo");             
+            label_info.setText("Objetivo no seleccionado.");    
+            label_info.setVisible(true);             
          }
     }
 
     @FXML
     private void modObj(MouseEvent event) {
+        setLabel();
         try {
              Objetivo obj=null;
              if(event.getSource()==upd_obj_1){
@@ -416,12 +422,14 @@ public class VentanaController implements Initializable {
             e.printStackTrace();
         }
          catch(RuntimeException e){
-            System.out.println("No se ha seleccionado ningún objetivo");             
+            label_info.setText("Objetivo no seleccionado.");    
+            label_info.setVisible(true);              
          }
     }
 
      @FXML
     private void addInd(MouseEvent event) {
+        setLabel();
         try {
              Objetivo obj=null;
              if(event.getSource()==add_ind_1){
@@ -458,12 +466,14 @@ public class VentanaController implements Initializable {
             e.printStackTrace();
         }
          catch(RuntimeException e){
-            System.out.println("No se ha seleccionado ningún objetivo");             
+            label_info.setText("Objetivo no seleccionado.");    
+            label_info.setVisible(true);              
          }
     }
 
     @FXML
     private void elimInd(MouseEvent event) {
+        setLabel();
          try {
              Indicador ind=null;
              if(event.getSource()==rem_ind_1){
@@ -500,12 +510,14 @@ public class VentanaController implements Initializable {
             e.printStackTrace();
         }
          catch(RuntimeException e){
-            System.out.println("No se ha seleccionado ningún Indicador");             
+            label_info.setText("Indicador no seleccionado.");    
+            label_info.setVisible(true);             
          }
     }
 
     @FXML
     private void modInd(MouseEvent event) {
+        setLabel();
         try {
              Indicador ind=null;
              if(event.getSource()==upd_ind_1){
@@ -542,11 +554,54 @@ public class VentanaController implements Initializable {
             e.printStackTrace();
         }
          catch(RuntimeException e){
-            System.out.println("No se ha seleccionado ningún Indicador");             
+            label_info.setText("Indicador no seleccionado.");    
+            label_info.setVisible(true);             
          }
     }
 
-    
+    @FXML
+    private void metas(MouseEvent event) {
+        setLabel();
+       try {
+             Objetivo obj=null;
+             if(event.getSource()==metas1){
+                 String cod = list_obj_1.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==metas2){
+                 String cod = list_obj_2.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==metas3){
+                 String cod = list_obj_3.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+             else if(event.getSource()==metas4){
+                 String cod = list_obj_4.getSelectionModel().getSelectedItem().getId();
+                obj = logicaVent.getObjetivo(cod);
+             }
+            
+             
+            FXMLLoader root = new FXMLLoader();
+            root.setLocation(getClass().getResource("metas.fxml"));
+            Scene sce = new Scene(root.load());
+            MetasController ec= (MetasController)root.getController();
+            ec.recibeParametros(obj,this);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Metas");
+            stage.setScene(sce);
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+         catch(RuntimeException e){
+            label_info.setText("Objetivo no seleccionado.");    
+            label_info.setVisible(true);           
+         }
+    }
     @FXML
     private void minimizar(MouseEvent event) {
         Window window = ((Node)(event.getSource())).getScene().getWindow(); 
@@ -554,89 +609,109 @@ public class VentanaController implements Initializable {
             ((Stage) window).setIconified(true);
         }
     }
-    
     @FXML
     private void accionObj1(MouseEvent event){
-        list_ind_1.getItems().clear();
-        for(Indicador ind:logicaVent.getIndicadores(list_obj_1.getSelectionModel().getSelectedItem().getId())){
-            TextFlow tf = new TextFlow();
-            tf.setTextAlignment(TextAlignment.JUSTIFY); 
-            tf.setLineSpacing(1.0); 
-            tf.setPrefWidth(5);
-            
-            
-            final Text leftText = TextBuilder.create()
-                .text(ind.getDescripcion())
-                .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 11))
-                .build();
-            tf.setId(ind.getCodigo()+"");
-            tf.getChildren().add(leftText);           
-            list_ind_1.getItems().add(tf);
+        setLabel();
+        try {
+            list_ind_1.getItems().clear();
+            for(Indicador ind:logicaVent.getIndicadores(list_obj_1.getSelectionModel().getSelectedItem().getId())){
+                TextFlow tf = new TextFlow();
+                tf.setTextAlignment(TextAlignment.JUSTIFY); 
+                tf.setLineSpacing(1.0); 
+                tf.setPrefWidth(5);
+
+
+                final Text leftText = TextBuilder.create()
+                    .text(ind.getDescripcion())
+                    .translateX(0)
+                    .font(Font.font(null, FontWeight.NORMAL, 11))
+                    .build();
+                tf.setId(ind.getCodigo()+"");
+                tf.getChildren().add(leftText);           
+                list_ind_1.getItems().add(tf);
         }
+        } catch (Exception e) {
+        }
+        
     }
     
     @FXML
     private void accionObj2(MouseEvent event){
-        list_ind_2.getItems().clear();
-        for(Indicador ind:logicaVent.getIndicadores(list_obj_2.getSelectionModel().getSelectedItem().getId())){
-            TextFlow tf = new TextFlow();
-            tf.setTextAlignment(TextAlignment.JUSTIFY); 
-            tf.setLineSpacing(1.0); 
-            tf.setPrefWidth(5);
+        setLabel();
+        try {
             
-            
-            final Text leftText = TextBuilder.create()
-                .text(ind.getDescripcion())
-                .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 11))
-                .build();
-            tf.setId(ind.getCodigo()+"");
-            tf.getChildren().add(leftText);           
-            list_ind_2.getItems().add(tf);
+            list_ind_2.getItems().clear();
+            for(Indicador ind:logicaVent.getIndicadores(list_obj_2.getSelectionModel().getSelectedItem().getId())){
+                TextFlow tf = new TextFlow();
+                tf.setTextAlignment(TextAlignment.JUSTIFY); 
+                tf.setLineSpacing(1.0); 
+                tf.setPrefWidth(5);
+
+
+                final Text leftText = TextBuilder.create()
+                    .text(ind.getDescripcion())
+                    .translateX(0)
+                    .font(Font.font(null, FontWeight.NORMAL, 11))
+                    .build();
+                tf.setId(ind.getCodigo()+"");
+                tf.getChildren().add(leftText);           
+                list_ind_2.getItems().add(tf);
+            }
+        } catch (Exception e) {
         }
+        
     }
     
     @FXML
     private void accionObj3(MouseEvent event){
-        list_ind_3.getItems().clear();
-        for(Indicador ind:logicaVent.getIndicadores(list_obj_3.getSelectionModel().getSelectedItem().getId())){
-            TextFlow tf = new TextFlow();
-            tf.setTextAlignment(TextAlignment.JUSTIFY); 
-            tf.setLineSpacing(1.0); 
-            tf.setPrefWidth(5);
-            
-            
-            final Text leftText = TextBuilder.create()
-                .text(ind.getDescripcion())
-                .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 11))
-                .build();
-            tf.setId(ind.getCodigo()+"");
-            tf.getChildren().add(leftText);           
-            list_ind_3.getItems().add(tf);
+        setLabel();
+        try {
+            list_ind_3.getItems().clear();
+            for(Indicador ind:logicaVent.getIndicadores(list_obj_3.getSelectionModel().getSelectedItem().getId())){
+                TextFlow tf = new TextFlow();
+                tf.setTextAlignment(TextAlignment.JUSTIFY); 
+                tf.setLineSpacing(1.0); 
+                tf.setPrefWidth(5);
+
+
+                final Text leftText = TextBuilder.create()
+                    .text(ind.getDescripcion())
+                    .translateX(0)
+                    .font(Font.font(null, FontWeight.NORMAL, 11))
+                    .build();
+                tf.setId(ind.getCodigo()+"");
+                tf.getChildren().add(leftText);           
+                list_ind_3.getItems().add(tf);
+            }
+        } catch (Exception e) {
         }
+        
     }
     
     @FXML
     private void accionObj4(MouseEvent event){
-        list_ind_4.getItems().clear();
-        for(Indicador ind:logicaVent.getIndicadores(list_obj_4.getSelectionModel().getSelectedItem().getId())){
-            TextFlow tf = new TextFlow();
-            tf.setTextAlignment(TextAlignment.JUSTIFY); 
-            tf.setLineSpacing(1.0); 
-            tf.setPrefWidth(5);
-            
-            
-            final Text leftText = TextBuilder.create()
-                .text(ind.getDescripcion())
-                .translateX(0)
-                .font(Font.font(null, FontWeight.NORMAL, 11))
-                .build();
-            tf.setId(ind.getCodigo()+"");
-            tf.getChildren().add(leftText);           
-            list_ind_4.getItems().add(tf);
+        setLabel();
+        try {
+            list_ind_4.getItems().clear();
+            for(Indicador ind:logicaVent.getIndicadores(list_obj_4.getSelectionModel().getSelectedItem().getId())){
+                TextFlow tf = new TextFlow();
+                tf.setTextAlignment(TextAlignment.JUSTIFY); 
+                tf.setLineSpacing(1.0); 
+                tf.setPrefWidth(5);
+
+
+                final Text leftText = TextBuilder.create()
+                    .text(ind.getDescripcion())
+                    .translateX(0)
+                    .font(Font.font(null, FontWeight.NORMAL, 11))
+                    .build();
+                tf.setId(ind.getCodigo()+"");
+                tf.getChildren().add(leftText);           
+                list_ind_4.getItems().add(tf);
+            }
+        } catch (Exception e) {
         }
+        
     }
     @FXML
     private void update(MouseEvent event){
@@ -721,7 +796,9 @@ public class VentanaController implements Initializable {
             list_obj_4.getItems().add(tf);
         }
     }
-    
+    private void setLabel(){
+        label_info.setVisible(false);
+    }
     public void update(){
         update(null);
     }
@@ -798,5 +875,6 @@ public class VentanaController implements Initializable {
     private void BBDD(MouseEvent event) {
         System.out.println("BBDD");
     }
+
     
 }
