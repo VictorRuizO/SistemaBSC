@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -12,30 +13,33 @@
     <children>
       <Pane layoutX="1.0" layoutY="1.0" prefHeight="560.0" prefWidth="590.0">
          <children>
-            <Button fx:id="cerrar" focusTraversable="false" graphicTextGap="0.0" layoutX="556.0" layoutY="7.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER">
+            <JFXButton fx:id="cerrar" focusTraversable="false" graphicTextGap="0.0" layoutX="556.0" layoutY="7.0" minWidth="26.0" mnemonicParsing="false" onMouseClicked="#exit" opacity="0.93" prefHeight="32.0" prefWidth="26.0" style="-fx-background-color: white;" text="" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font size="14.0" />
-               </font></Button>
-            <Button layoutX="340.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Modificar">
+               </font></JFXButton>
+            <JFXButton layoutX="340.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#modificar" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Modificar">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <Button layoutX="447.0" layoutY="477.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Cancelar">
+            </JFXButton>
+            <JFXButton layoutX="447.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #EEEEEE; -fx-border-color: grey; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0.0, 0.0 );" text="Cancelar">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <JFXTextField editable="false" focusTraversable="false" layoutX="72.0" layoutY="365.0" prefHeight="32.0" prefWidth="186.0" promptText="Fecha de nacimiento" />
-            <JFXTextField layoutX="72.0" layoutY="421.0" prefHeight="32.0" prefWidth="186.0" promptText="Contraseña" />
-            <JFXTextField layoutX="72.0" layoutY="291.0" prefHeight="32.0" prefWidth="186.0" promptText="Apellidos" />
-            <JFXTextField layoutX="72.0" layoutY="225.0" prefHeight="32.0" prefWidth="186.0" promptText="Nombres" />
-            <JFXTextField editable="false" focusTraversable="false" layoutX="72.0" layoutY="162.0" prefHeight="32.0" prefWidth="186.0" promptText="Documento de identidad" />
-            <JFXComboBox layoutX="72.0" layoutY="496.0" prefHeight="32.0" prefWidth="186.0" promptText="Área" style="-jfx-label-float: true;" />
-            <JFXComboBox fx:id="usuarios" editable="true" layoutX="72.0" layoutY="77.0" prefHeight="32.0" prefWidth="451.0" promptText="Usuario" />
+            </JFXButton>
+            <JFXTextField fx:id="fecha_nac" editable="false" focusTraversable="false" layoutX="72.0" layoutY="291.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Fecha de nacimiento" />
+            <JFXTextField fx:id="contrasena" layoutX="72.0" layoutY="421.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Contraseña" />
+            <JFXTextField fx:id="apellidos" layoutX="72.0" layoutY="221.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Apellidos" />
+            <JFXTextField fx:id="nombres" layoutX="72.0" layoutY="169.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Nombres" />
+            <JFXTextField fx:id="di" editable="false" focusTraversable="false" layoutX="72.0" layoutY="110.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Documento de identidad" />
+            <JFXComboBox fx:id="area" layoutX="72.0" layoutY="478.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Área" style="-jfx-label-float: true;" />
+            <JFXComboBox fx:id="usuarios" editable="true" layoutX="70.0" layoutY="39.0" onAction="#accion" prefHeight="32.0" prefWidth="451.0" promptText="Usuario" style="-jfx-label-float: true;" />
+            <Label fx:id="label_info" layoutX="334.0" layoutY="469.0" prefHeight="17.0" prefWidth="203.0" text="Label" textFill="RED" visible="false" />
+            <JFXTextField fx:id="mail" focusTraversable="false" layoutX="72.0" layoutY="348.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="186.0" promptText="Correo electronico" />
+           
          </children>
       </Pane>
     </children>

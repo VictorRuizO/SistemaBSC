@@ -35,6 +35,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import logica.VentanaLogica;
 import modelo.Administrador;
+import modelo.Area;
 import modelo.Indicador;
 import modelo.Objetivo;
 import modelo.Usuario;
@@ -185,7 +186,7 @@ public class VentanaController implements Initializable {
             root.setLocation(getClass().getResource("add_usuario.fxml"));
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("My New Stage Title");
+            stage.setTitle("Agregar Usuario");
             stage.setScene(new Scene(root.load()));
             stage.show();
             
@@ -203,7 +204,7 @@ public class VentanaController implements Initializable {
             root.setLocation(getClass().getResource("modificar_usuario.fxml"));
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("My New Stage Title");
+            stage.setTitle("Modificar Usuario");
             stage.setScene(new Scene(root.load()));
             stage.show();
             
@@ -321,21 +322,38 @@ public class VentanaController implements Initializable {
     private void addObj(MouseEvent event) {
         setLabel();
         try {
+            String[] areas = logicaVent.getAreas();
+            String a="";
+            if(event.getSource()==add_obj_1){
+                a=areas[0];
+            }
+            else if(event.getSource()==add_obj_2){
+                a=areas[1];
+            }
+            else if(event.getSource()==add_obj_3){
+                a=areas[2];
+            }
+            else if(event.getSource()==add_obj_4){
+                a=areas[3];
+            }
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("add_objetivo.fxml"));
             Scene sce = new Scene(root.load());
-            AddObjetivoController a = (AddObjetivoController)root.getController();
-            a.recibirParametros(usuarioLog.getCodArea(),this);
+            AddObjetivoController add = (AddObjetivoController)root.getController();
+            add.recibirParametros(logicaVent.getArea(a),this);
             Stage stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Agregar Objetivo");
             stage.setScene(sce);
             stage.show();
-            
-        }
-        catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
+        catch (Exception e) {
+            
+        }
+       
+        
     }
 
     @FXML
@@ -865,7 +883,11 @@ public class VentanaController implements Initializable {
         labelUsuario.setText(adminLog.getNombres()+"\n"+adminLog.getApellidos());
         labelArea.setText("Administrador");
         bbdd_settings.setVisible(true);
+        add_usuario.setVisible(true);
+        elim_usuario.setVisible(true);
+        mod_usuario.setVisible(true);
         confBotones("ADMIN");
+        update();
     }
 
     private void confBotones(String codigo) {
@@ -882,7 +904,7 @@ public class VentanaController implements Initializable {
             metas1.setDisable(false);
             inici1.setDisable(false);
         }
-        else if(codigo.equals(as[1])||codigo.equals("ADMIN")){
+        if(codigo.equals(as[1])||codigo.equals("ADMIN")){
             add_obj_2.setDisable(false);
             rem_obj_2.setDisable(false);
             upd_obj_2.setDisable(false);
@@ -892,7 +914,7 @@ public class VentanaController implements Initializable {
             metas2.setDisable(false);
             inici2.setDisable(false);
         }
-        else if(codigo.equals(as[2])||codigo.equals("ADMIN")){
+        if(codigo.equals(as[2])||codigo.equals("ADMIN")){
             add_obj_3.setDisable(false);
             rem_obj_3.setDisable(false);
             upd_obj_3.setDisable(false);
@@ -902,7 +924,7 @@ public class VentanaController implements Initializable {
             metas3.setDisable(false);
             inici3.setDisable(false);
         }
-        else if(codigo.equals(as[3])||codigo.equals("ADMIN")){
+        if(codigo.equals(as[3])||codigo.equals("ADMIN")){
             add_obj_4.setDisable(false);
             rem_obj_4.setDisable(false);
             upd_obj_4.setDisable(false);

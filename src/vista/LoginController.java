@@ -93,6 +93,36 @@ public class LoginController implements Initializable {
     
     private void login() {
         
+        int admin = logicaLogin.adminLogin(usuario.getText(),contrasena.getText());
+        
+        if(admin==0){ //todo bien
+            try {
+                FXMLLoader root = new FXMLLoader();
+                root.setLocation(getClass().getResource("ventana.fxml"));
+                Scene sce = new Scene(root.load());
+                VentanaController vc= (VentanaController)root.getController();
+                vc.recibeParametrosAdministrador(logicaLogin.getAdmin());
+
+                Stage stage = new Stage();
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.setTitle("Sistema BSC");
+                stage.setScene(sce);
+                stage.show();
+                //Hide this current window (if this is what you want)
+                usuario.getScene().getWindow().hide();
+                return;
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+        }
+        else if (admin==1) { //error contraseña
+            label_info.setText("(admin) contraseña incorrecta.");
+            label_info.setVisible(true);
+            return;
+        }
+        
         if(usuario.getText().equals("") || contrasena.getText().equals("")){
             //campos vacios
             label_info.setText("Campos vacios.");

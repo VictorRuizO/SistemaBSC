@@ -62,4 +62,8 @@ public class VentanaLogica {
         int i=Integer.parseInt(cod);
         return indCont.findIndicador(i);
     }
+
+    public Area getArea(String a) {
+        return areaCont.findArea(a);
+    }
 }
