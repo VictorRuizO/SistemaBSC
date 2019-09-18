@@ -19,7 +19,7 @@ import pesistencia.exceptions.IllegalOrphanException;
 import pesistencia.exceptions.NonexistentEntityException;
 
 /**
- *
+ *Esta clase tiene se conecta con el controlador de la BD y se encarga de eliminar objetivos
  * @author Victor
  */
 public class ElimObjetivoLogica {
@@ -28,7 +28,9 @@ public class ElimObjetivoLogica {
     private MetaJpaController metaCont;
     private IndicadorJpaController indCont;
     private IniciativaJpaController iniCont;
-    
+     /**
+     * Constructor de la clase
+     */
     public ElimObjetivoLogica(){
         objCont = new ObjetivoJpaController();
         metaCont = new MetaJpaController();
@@ -36,6 +38,10 @@ public class ElimObjetivoLogica {
         iniCont = new IniciativaJpaController();
     }
     
+     /**
+     * Eliminar el objetivo ingredaro junto a sus metas, indicadores e iniciativas
+     * @param obj Objetivo que se va e eliminar
+     */
     public void eliminar(Objetivo obj){
         try {
             for(Meta m:obj.getMetaList())

@@ -33,7 +33,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz de iniciativas
  * @author Victor
  */
 public class IniciativasController implements Initializable {
@@ -204,6 +204,11 @@ public class IniciativasController implements Initializable {
         label_info.setGraphic((new ImageView(imgError)));
     }
     
+    /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo de la iniciativa
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Objetivo o,VentanaController v){
         obj=o;
         ventP=v;

@@ -23,7 +23,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz de modificar objetivo
  * @author Victor
  */
 public class ModObjetivoController implements Initializable {
@@ -77,7 +77,11 @@ public class ModObjetivoController implements Initializable {
         Image imgLabel = new Image(linkLabel.toString(),20,20,false,true);
         label_info.setGraphic((new ImageView(imgLabel)));
     }
-    
+    /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo a modificar
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Objetivo o,VentanaController v){
         obj=o;
         ventP=v;

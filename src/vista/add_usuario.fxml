@@ -25,7 +25,7 @@
             <JFXTextField fx:id="di" layoutX="60.0" layoutY="35.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Documento de identidad" />
             <JFXTextField fx:id="nombres" layoutX="59.0" layoutY="88.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Nombres" />
             <JFXTextField fx:id="apellidos" layoutX="61.0" layoutY="131.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Apellidos" />
-            <JFXDatePicker fx:id="fecha_nac" layoutX="59.0" layoutY="202.0" onMouseClicked="#setLabel" prefHeight="28.0" prefWidth="265.0" promptText="Fecha de nacimiento" />
+            <JFXDatePicker fx:id="fecha_nac" editable="false" layoutX="59.0" layoutY="202.0" onMouseClicked="#setLabel" prefHeight="28.0" prefWidth="265.0" promptText="Fecha de nacimiento" />
             <JFXTextField fx:id="mail" layoutX="59.0" layoutY="247.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Correo electronico" />
             <JFXPasswordField fx:id="contrasena" layoutX="59.0" layoutY="304.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Contraseña" />
             <JFXPasswordField fx:id="confir_contrasena" layoutX="61.0" layoutY="350.0" onMouseClicked="#setLabel" prefHeight="32.0" prefWidth="245.0" promptText="Confirmar contraseña" />

@@ -27,7 +27,7 @@ import modelo.Area;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz agregar usuarios
  * @author Victor
  */
 public class AddUsuarioController implements Initializable {

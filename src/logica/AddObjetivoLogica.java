@@ -16,7 +16,7 @@ import pesistencia.MetaJpaController;
 import pesistencia.ObjetivoJpaController;
 
 /**
- *
+ * Esta clase tiene se conecta con el controlador de la BD y se encarga de agregar objetivos
  * @author Victor
  */
 public class AddObjetivoLogica {
@@ -26,13 +26,23 @@ public class AddObjetivoLogica {
     private IndicadorJpaController indCont;
     private IniciativaJpaController iniCont;
     
+     /**
+     * Constructor de la clase
+     */
     public AddObjetivoLogica(){
         objCont = new ObjetivoJpaController();
         metaCont = new MetaJpaController();
         indCont = new IndicadorJpaController();
         iniCont = new IniciativaJpaController();
     }
-    
+     /**
+     * Construye y agrega objetivos en el sistema
+     * @param obj Desctripcion del objetivo
+     * @param meta Descripcion de la meta del objetivo
+     * @param ini Descripcion de la iniciativa del objetivo
+     * @param ind Descipcion de la indicacion del objetivo
+     * @param area Area a la cual pertenence el objetivo
+     */
     public void agregarObjetivo(String obj, String meta, String ini, String ind, Area area){
         Objetivo o = new Objetivo();
         o.setDescripcion(obj);

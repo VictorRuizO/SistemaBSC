@@ -34,8 +34,8 @@ import logica.Login;
 import modelo.Usuario;
 
 /**
- * FXML Controller class
- *
+ * Esta clase es el FXML Controller de la vista login.fxml
+ *Esta clase el la clase controladora de la interfaz del login
  * @author Victor
  */
 public class LoginController implements Initializable {
@@ -56,8 +56,12 @@ public class LoginController implements Initializable {
     @FXML
     private Label label_info;
 
-    /**
-     * Initializes the controller class.
+     /**
+
+     * Metodo que inicializa la vista (javafx)
+
+     * @param url,rb parametros por defecto del controlador de vista de javafx
+
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -89,7 +93,12 @@ public class LoginController implements Initializable {
         label_info.setVisible(false);
     }
     
-    
+     /**
+
+     * Método que identifica al usuario y abre la vista ventana para dar las funcionalidades
+
+
+     */
     
     private void login() {
         
@@ -176,7 +185,7 @@ public class LoginController implements Initializable {
     }
     
     
-    public void setIcons(){
+    private void setIcons(){
         //Iconos
         URL linkCerrar = getClass().getResource("/imagenes/close.png");
         Image imgCerrar = new Image(linkCerrar.toString(),20,20,false,true);

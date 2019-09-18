@@ -22,7 +22,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz eliminar objetivo
  * @author Victor
  */
 public class ElimObjetivoController implements Initializable {
@@ -65,6 +65,11 @@ public class ElimObjetivoController implements Initializable {
         
         
     }
+        /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo a eliminar
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Objetivo o,VentanaController v){
         obj=o;
         ventP=v;

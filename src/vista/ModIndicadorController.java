@@ -23,7 +23,7 @@ import modelo.Indicador;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz de modificar indicador
  * @author Victor
  */
 public class ModIndicadorController implements Initializable {
@@ -77,7 +77,11 @@ public class ModIndicadorController implements Initializable {
         label_info.setGraphic((new ImageView(imgError)));
     }
 
-    
+    /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo del indicador
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Indicador o, VentanaController v){
         ind = o;
         ventP=v;

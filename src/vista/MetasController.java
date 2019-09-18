@@ -32,7 +32,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz de metas
  * @author Victor
  */
 public class MetasController implements Initializable {
@@ -204,7 +204,11 @@ public class MetasController implements Initializable {
         Image imgError = new Image(linkError.toString(),20,20,false,true);
         label_info.setGraphic((new ImageView(imgError)));
     }
-    
+    /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo de la meta
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Objetivo o,VentanaController v){
         obj=o;
         ventP=v;

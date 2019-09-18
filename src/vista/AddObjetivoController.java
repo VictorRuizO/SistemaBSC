@@ -23,7 +23,7 @@ import modelo.Area;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz agregar objetivos
  * @author Victor
  */
 public class AddObjetivoController implements Initializable {
@@ -111,7 +111,11 @@ public class AddObjetivoController implements Initializable {
         exit(null);
         
     }
-    
+        /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param a Area del objetivos
+     * @param v Ventana principal
+     */
     public void recibirParametros(Area a, VentanaController v){
         area=a;
         ventP=v;

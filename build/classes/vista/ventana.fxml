@@ -100,7 +100,6 @@
                </font>
             </Label>
             <JFXButton fx:id="upd_boton" focusTraversable="false" layoutX="12.0" layoutY="810.0" onMouseClicked="#update" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: white;" />
-            <JFXButton fx:id="bbdd_settings" focusTraversable="false" layoutX="48.0" layoutY="810.0" onMouseClicked="#BBDD" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: white;" visible="false" />
             <Label fx:id="label_info" layoutX="17.0" layoutY="841.0" prefHeight="17.0" prefWidth="166.0" text="Label" textFill="RED" visible="false">
                <font>
                   <Font size="10.0" />

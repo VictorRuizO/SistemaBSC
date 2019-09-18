@@ -14,24 +14,33 @@ import pesistencia.ObjetivoJpaController;
 import pesistencia.exceptions.NonexistentEntityException;
 
 /**
- *
+ *Esta clase tiene se conecta con el controlador de la BD y se encarga gestionar todas las operaciones de las iniciativas
  * @author Victor
  */
 public class IniciativaLogica {
     
     private IniciativaJpaController iniCont;
     private ObjetivoJpaController objCont;
-    
+    /**
+     * Constructor de la clase
+     */
     public IniciativaLogica(){
         iniCont = new IniciativaJpaController();
         objCont = new ObjetivoJpaController();
     }
-
+     /**
+     * Retorna una iniciativa
+     * @param id ID de la iniciativa
+     */
     public Iniciativa getIniciativa(String id) {
         int i = Integer.parseInt(id);
         return iniCont.findIniciativa(i);
     }
-
+     /**
+     * Crea y agrega una iniciativa de un objetivo al sistema
+     * @param text descripcion de la iniciativa
+     * @param o Objetivo al cual pertenece la iniciativa
+     */
     public void agregarIniciativa(String text,Objetivo o) {
         Iniciativa m = new Iniciativa();
         m.setDescripcion(text);
@@ -39,11 +48,17 @@ public class IniciativaLogica {
         iniCont.create(m);
         
     }
-
+     /**
+     * Retorna un objetivo
+     * @param o Objetivo
+     */
     public Objetivo obtenerObjetivo(Objetivo o){
         return objCont.findObjetivo(o.getCodigo());
     }
-
+     /**
+     * Elimina una iniciativa de un objetivo al sistema
+     * @param id ID de la iniciativa
+     */
     public void eliminarIniciativa(String id) {
         try {
             int i = Integer.parseInt(id);
@@ -52,7 +67,11 @@ public class IniciativaLogica {
             Logger.getLogger(MetaLogica.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+     /**
+     * Modifica una iniciativa de un objetivo al sistema
+     * @param text Nueva descripcion de la iniciativa
+     * @param met Iniciativa que se va a modificar
+     */
     public void modificarIniciativa(String text, Iniciativa met) {
         try {
             met.setDescripcion(text);

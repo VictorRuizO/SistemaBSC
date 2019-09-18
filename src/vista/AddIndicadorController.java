@@ -23,7 +23,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz agregar indicador
  * @author Victor
  */
 public class AddIndicadorController implements Initializable {
@@ -88,7 +88,11 @@ public class AddIndicadorController implements Initializable {
         exit(null);
         
     }
-    
+    /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo del indicador
+     * @param v Ventana principal
+     */    
     public void recibeParametros(Objetivo o, VentanaController v){
         obj = o;
         ventP=v;

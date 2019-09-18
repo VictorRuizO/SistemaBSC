@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
- *
+ *Esta clase tiene como funcionar iniciar toda la aplicacion llamando a la interfaz login
  * @author Victor
  */
 public class SistemaBSC extends Application {

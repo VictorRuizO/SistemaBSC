@@ -13,17 +13,14 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -35,14 +32,13 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import logica.VentanaLogica;
 import modelo.Administrador;
-import modelo.Area;
 import modelo.Indicador;
 import modelo.Objetivo;
 import modelo.Usuario;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz principal
  * @author Victor
  */
 public class VentanaController implements Initializable {
@@ -155,8 +151,6 @@ public class VentanaController implements Initializable {
     @FXML
     private JFXButton upd_boton;
     @FXML
-    private JFXButton bbdd_settings;
-    @FXML
     private Label label_info;
 
     /**
@@ -175,6 +169,7 @@ public class VentanaController implements Initializable {
         Window window = ((Node)(event.getSource())).getScene().getWindow(); 
         if (window instanceof Stage){
             ((Stage) window).close();
+            System.exit(0);
         }
     }
     
@@ -308,11 +303,11 @@ public class VentanaController implements Initializable {
         URL linkUpdb = getClass().getResource("/imagenes/update.png");
         Image imgUpdb = new Image(linkUpdb.toString(),20,20,false,true);
         upd_boton.setGraphic((new ImageView(imgUpdb)));
-        
+        /*
         URL linkBD = getClass().getResource("/imagenes/database-settings.png");
         Image imgBD = new Image(linkBD.toString(),20,20,false,true);
         bbdd_settings.setGraphic((new ImageView(imgBD)));
-        
+        */
         URL linkError = getClass().getResource("/imagenes/error.png");
         Image imgError = new Image(linkError.toString(),20,20,false,true);
         label_info.setGraphic((new ImageView(imgError)));
@@ -321,6 +316,7 @@ public class VentanaController implements Initializable {
     @FXML
     private void addObj(MouseEvent event) {
         setLabel();
+
         try {
             String[] areas = logicaVent.getAreas();
             String a="";
@@ -336,6 +332,13 @@ public class VentanaController implements Initializable {
             else if(event.getSource()==add_obj_4){
                 a=areas[3];
             }
+            
+            if(logicaVent.getCountObj(a)>=10){
+                label_info.setText("Minimo 10 objetivos.");    
+                label_info.setVisible(true);  
+                return;
+            }
+            
             FXMLLoader root = new FXMLLoader();
             root.setLocation(getClass().getResource("add_objetivo.fxml"));
             Scene sce = new Scene(root.load());
@@ -861,9 +864,16 @@ public class VentanaController implements Initializable {
     private void setLabel(){
         label_info.setVisible(false);
     }
+        /**
+     * actualiza los diferentes listados de la interfaz
+     */  
     public void update(){
         update(null);
     }
+    /**
+     * Recibe los paramentros necesarios para la interfaz en caso de logearse un usuario
+     * @param usuario usuario logeado
+     */  
     public void recibeParametrosUsuario(Usuario usuario){
         esUsuario=true;
         usuarioLog=usuario;
@@ -876,13 +886,15 @@ public class VentanaController implements Initializable {
         confBotones(usuarioLog.getCodArea().getCodigo());
         update(null);
     }
-    
+        /**
+     * Recibe los paramentros necesarios para la interfaz en caso de logearse un administrador
+     * @param admin administrador logeado
+     */  
     public void recibeParametrosAdministrador(Administrador admin){
         esUsuario=false;
         adminLog=admin;
         labelUsuario.setText(adminLog.getNombres()+"\n"+adminLog.getApellidos());
         labelArea.setText("Administrador");
-        bbdd_settings.setVisible(true);
         add_usuario.setVisible(true);
         elim_usuario.setVisible(true);
         mod_usuario.setVisible(true);
@@ -937,10 +949,7 @@ public class VentanaController implements Initializable {
         
     }
 
-    @FXML
-    private void BBDD(MouseEvent event) {
-        System.out.println("BBDD");
-    }
+   
 
     
 

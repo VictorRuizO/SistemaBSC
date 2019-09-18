@@ -24,7 +24,7 @@ import modelo.Objetivo;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz eliminar indicador
  * @author Victor
  */
 public class ElimIndicadorController implements Initializable {
@@ -84,7 +84,11 @@ public class ElimIndicadorController implements Initializable {
         ventP.update();
         exit(null);
     }
-    
+        /**
+     * Recibe los paramentros necesarios para la interfaz
+     * @param o Objetivo del indicador
+     * @param v Ventana principal
+     */  
     public void recibeParametros(Indicador o, VentanaController v){
         ind = o;
         ventP=v;

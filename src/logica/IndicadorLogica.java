@@ -13,17 +13,23 @@ import pesistencia.IndicadorJpaController;
 import pesistencia.exceptions.NonexistentEntityException;
 
 /**
- *
+ *Esta clase tiene se conecta con el controlador de la BD y se encarga gestionar todas las operaciones de los indicadores
  * @author Victor
  */
 public class IndicadorLogica {
     
     private IndicadorJpaController indCont;
-    
+    /**
+     * Constructor de la clase
+     */
     public IndicadorLogica(){
         indCont = new IndicadorJpaController();
     }
-
+     /**
+     * Crea y agrega un indicador de un objetivo al sistema
+     * @param text descripcion del indicador
+     * @param obj Objetivo al cual pertenece el indicador
+     */
     public void agregarIndicador(String text, Objetivo obj) {
         Indicador i = new Indicador();
         i.setDescripcion(text);
@@ -31,7 +37,10 @@ public class IndicadorLogica {
         
         indCont.create(i);
     }
-
+     /**
+     * Elimina un indicador del sistema
+     * @param ind Indicador el cual se va a eliminar
+     */
     public void eliminarIndicador(Indicador ind) {
         try {
             indCont.destroy(ind.getCodigo());
@@ -39,7 +48,11 @@ public class IndicadorLogica {
             Logger.getLogger(IndicadorLogica.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+     /**
+     * Modifica un indicador (su descripcion)
+     * @param ind Indicador que se va a modificar
+     * @param text Nueva descripcion del indicador
+     */
     public void modificarIndicador(Indicador ind, String text) {
         try {
             ind.setDescripcion(text);

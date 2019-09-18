@@ -29,7 +29,7 @@ import modelo.Usuario;
 
 /**
  * FXML Controller class
- *
+ *Esta clase el la clase controladora de la interfaz eliminar usuarios
  * @author Victor
  */
 public class EliminarUsuarioController implements Initializable {
@@ -102,7 +102,7 @@ public class EliminarUsuarioController implements Initializable {
     private void setUsuarios(){
         usuarios.getItems().clear();
         for(Usuario u:listaUsu)
-            usuarios.getItems().add(u.getDi()+" - "+u.getNombres()+" "+u.getApellidos());
+            usuarios.getItems().add(u.getNombres()+" "+u.getApellidos()+" - "+u.getDi());
     }
 
     private void setLabel() {
@@ -147,7 +147,8 @@ public class EliminarUsuarioController implements Initializable {
     private void accion(ActionEvent event) {
         setLabel();
         try {
-            String s = usuarios.getSelectionModel().getSelectedItem().split(" ")[0];
+            String[] g = usuarios.getSelectionModel().getSelectedItem().split(" ");
+            String s=g[g.length-1];
             usuSel = logicaUsu.getUsuario(s);
             
             if(usuSel==null) return;
